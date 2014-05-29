@@ -1,6 +1,8 @@
 "vi互換ではなくVimのデフォルト設定にする
+"理解していない
 set nocompatible
 " 一旦ファイルタイプ関連を無効化
+"理解していない
 filetype off
 " neobundleでプラグインを管理
 if has('vim_starting')
@@ -55,15 +57,19 @@ NeoBundle 'mattn/emmet-vim'
 
 set t_Co=256
 " ファイラー関連
+"理解していない
 nnoremap <Leader>e :VimFilerExplorer<CR>
 nnoremap <Leader>g :GundoToggle<CR>
 let g:vimfiler_enable_auto_cd = 1
 let g:vimfiler_as_default_explorer = 1
 "mru,reg,buf
+"理解していない
 noremap :um :Unite file_mru -buffer-name=file_mru
 noremap :ur :Unite register -buffer-name=register
 noremap :ub :Unite buffer -buffer-name=buffer
 nnoremap <C-u>m  :Unite file_mru<CR>
+"自分で設定
+noremap :uf :Unite file 
 " 環境設定系
 " シンタックスハイライト
 syntax on
@@ -74,14 +80,18 @@ set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
 " .swapファイルを作らない
+"理解していない
 set noswapfile
 " バックアップファイルを作らない
+"理解していない
 set nowritebackup
 " バックアップをしない
+"理解していない
 set nobackup
 " バックスペースで各種消せるようにする
 set backspace=indent,eol,start
 " ビープ音を消す
+"理解していない
 set vb t_vb=
 set novisualbell
 " OSのクリップボードを使う
@@ -94,8 +104,10 @@ set number
 " 右下に表示される行・列の番号を表示する
 set ruler
 " compatibleオプションをオフにする
+"理解していない
 set nocompatible
 " 移動コマンドを使ったとき、行頭に移動しない
+"理解していない
 set nostartofline
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
@@ -106,6 +118,7 @@ set matchtime=3
 " ウィンドウの幅より長い行は折り返され、次の行に続けて表示される
 set wrap
 " 入力されているテキストの最大幅を無効にする
+"理解していない
 set textwidth=0
 " 不可視文字を表示
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
@@ -114,16 +127,19 @@ set shiftround
 " 補完の際の大文字小文字の区別しない
 set infercase
 " 文字がない場所にもカーソルを移動できるようにする
-set virtualedit=all
+"set virtualedit=all
 " 変更中のファイルでも、保存しないで他のファイルを表示
+"理解していない
 set hidden
 " 新しく開く代わりにすでに開いてあるバッファを開く
+"理解していない
 set switchbuf=useopen
 " 小文字の検索でも大文字も見つかるようにする
 set ignorecase
 " ただし大文字も含めた検索の場合はその通りに検索する
 set smartcase
 " インクリメンタルサーチを行う
+"理解していない
 set incsearch
 " 検索結果をハイライト表示
 :set hlsearch
@@ -132,18 +148,21 @@ set history=10000
 " マウスモード有効
 "set mouse=a
 " xtermとscreen対応
+"理解していない
 set ttymouse=xterm2
 " コマンドを画面最下部に表示する
 set showcmd
  
  
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
+"理解していない
 cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
 inoremap jj <Esc>
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 " カーソル下の単語を * で検索
+"理解していない
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
@@ -158,6 +177,7 @@ nnoremap k gk
 " vを二回で行末まで選択
 vnoremap v $h
 " TABにて対応ペアにジャンプ
+"理解していない
 nnoremap &lt;Tab&gt; %
 vnoremap &lt;Tab&gt; %
 " Ctrl + hjkl でウィンドウ間を移動
@@ -166,11 +186,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Shift + 矢印でウィンドウサイズを変更
+"理解していない
 nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " T + ? で各種設定をトグル
+"理解していない
 nnoremap [toggle] <Nop>
 nmap T [toggle]
 nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
@@ -179,6 +201,7 @@ nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
  
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
+"理解していない
 function! s:mkdir(dir, force)
   if !isdirectory(a:dir) && (a:force ||
         \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
@@ -187,6 +210,7 @@ function! s:mkdir(dir, force)
 endfunction
  
 " vim 起動時のみカレントディレクトリを開いたファイルの親ディレクトリに指定 
+"理解していない
 function! s:ChangeCurrentDir(directory, bang)
     if a:directory == ''
         lcd %:p:h
@@ -200,6 +224,7 @@ function! s:ChangeCurrentDir(directory, bang)
 endfunction
  
 " ~/.vimrc.localが存在する場合のみ設定を読み込む
+"理解していない
 let s:local_vimrc = expand('~/.vimrc.local')
 if filereadable(s:local_vimrc)
     execute 'source ' . s:local_vimrc
@@ -207,6 +232,7 @@ endif
  
 " /{pattern}の入力中は「/」をタイプすると自動で「\/」が、
 " ?{pattern}の入力中は「?」をタイプすると自動で「\?」が 入力されるようになる
+nnoremap <c-h> <c-w>h
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 if has('unnamedplus')

@@ -1,0 +1,9 @@
+#sshのパス
+alias sshk='ssh -p 5100  kmatsuda@153.121.53.206'
+alias sshn='ssh -p 5100  nek@153.121.53.206'
+#pythonのPATH
+#export PATH=/usr/local/opt/python/bin:$PATH
+#MAMPのPATH
+export PATH=$PATH:/Applications/MAMP/bin/php/php5.5.10/bin
+export PATH=$PATH:/Applications/MAMP/Library/bin
+

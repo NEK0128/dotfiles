@@ -1,8 +1,6 @@
 "vi互換ではなくVimのデフォルト設定にする
-"理解していない
 set nocompatible
 " 一旦ファイルタイプ関連を無効化
-"理解していない
 filetype off
 " neobundleでプラグインを管理
 if has('vim_starting')
@@ -14,12 +12,10 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
+" ここまでよんだ
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
@@ -27,16 +23,11 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-endwise.git' 
-NeoBundle 'ruby-matchit'
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'taichouchou2/vim-rsense'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'taichouchou2/vim-rails'
-NeoBundle 'romanvbabenko/rails.vim'
 NeoBundle 'ujihisa/unite-rake'
-NeoBundle 'basyura/unite-rails'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'taichouchou2/vim-ref-ri'
 NeoBundle 'taq/vim-rspec'
@@ -57,19 +48,6 @@ NeoBundle 'mattn/emmet-vim'
 
 set t_Co=256
 " ファイラー関連
-"理解していない
-nnoremap <Leader>e :VimFilerExplorer<CR>
-nnoremap <Leader>g :GundoToggle<CR>
-let g:vimfiler_enable_auto_cd = 1
-let g:vimfiler_as_default_explorer = 1
-"mru,reg,buf
-"理解していない
-noremap :um :Unite file_mru -buffer-name=file_mru
-noremap :ur :Unite register -buffer-name=register
-noremap :ub :Unite buffer -buffer-name=buffer
-nnoremap <C-u>m  :Unite file_mru<CR>
-"自分で設定
-noremap :uf :Unite file 
 " 環境設定系
 " シンタックスハイライト
 syntax on
@@ -80,18 +58,15 @@ set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
 " .swapファイルを作らない
-"理解していない
 set noswapfile
 " バックアップファイルを作らない
-"理解していない
 set nowritebackup
 " バックアップをしない
-"理解していない
 set nobackup
 " バックスペースで各種消せるようにする
 set backspace=indent,eol,start
 " ビープ音を消す
-"理解していない
+" 代わりにフラッシュ
 set vb t_vb=
 set novisualbell
 " OSのクリップボードを使う
@@ -103,11 +78,8 @@ set list
 set number
 " 右下に表示される行・列の番号を表示する
 set ruler
-" compatibleオプションをオフにする
-"理解していない
-set nocompatible
 " 移動コマンドを使ったとき、行頭に移動しない
-"理解していない
+" ここまで完了
 set nostartofline
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
@@ -152,7 +124,10 @@ set history=10000
 set ttymouse=xterm2
 " コマンドを画面最下部に表示する
 set showcmd
- 
+set tabstop=4
+set autoindent
+set expandtab
+set shiftwidth=4 
  
 " w!! でスーパーユーザーとして保存（sudoが使える環境限定）
 "理解していない

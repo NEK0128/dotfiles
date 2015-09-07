@@ -8,43 +8,24 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 call neobundle#rc(expand('~/.vim/bundle'))
 NeoBundle 'Shougo/neobundle.vim'
-" 以下のプラグインをバンドル
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'scrooloose/nerdtree'
-" ここまでよんだ
-NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'open-browser.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'tpope/vim-endwise.git' 
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'taichouchou2/vim-rsense'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'ujihisa/unite-rake'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'taichouchou2/vim-ref-ri'
-NeoBundle 'taq/vim-rspec'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Lokaltog/powerline'
 " Perl関連プラグインをバンドル
 NeoBundle 'petdance/vim-perl'
 NeoBundle 'hotchpotch/perldoc-vim'
 " シンタックス系プラグインをバンドル
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neosnippet'
-" 実行プラグインをバンドル
-NeoBundle 'thinca/vim-quickrun'
-" 編集履歴管理
-NeoBundle "sjl/gundo.vim"
-"html emmet
-NeoBundle 'mattn/emmet-vim'
+NeoBundle 'python_fold'
+NeoBundle 'davidhalter/jedi-vim'
 
 set t_Co=256
 " ファイラー関連
@@ -65,22 +46,14 @@ set nowritebackup
 set nobackup
 " バックスペースで各種消せるようにする
 set backspace=indent,eol,start
-" ビープ音を消す
-" 代わりにフラッシュ
-set vb t_vb=
-set novisualbell
 " OSのクリップボードを使う
 set clipboard+=unnamed
-set clipboard=unnamed
 " 不可視文字を表示
 set list
 " 行番号を表示
 set number
 " 右下に表示される行・列の番号を表示する
 set ruler
-" 移動コマンドを使ったとき、行頭に移動しない
-" ここまで完了
-set nostartofline
 " 対応括弧に<と>のペアを追加
 set matchpairs& matchpairs+=<:>
 " 対応括弧をハイライト表示する
@@ -98,14 +71,6 @@ set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set shiftround
 " 補完の際の大文字小文字の区別しない
 set infercase
-" 文字がない場所にもカーソルを移動できるようにする
-"set virtualedit=all
-" 変更中のファイルでも、保存しないで他のファイルを表示
-"理解していない
-set hidden
-" 新しく開く代わりにすでに開いてあるバッファを開く
-"理解していない
-set switchbuf=useopen
 " 小文字の検索でも大文字も見つかるようにする
 set ignorecase
 " ただし大文字も含めた検索の場合はその通りに検索する
@@ -114,13 +79,9 @@ set smartcase
 "理解していない
 set incsearch
 " 検索結果をハイライト表示
-:set hlsearch
+set hlsearch
 " コマンド、検索パターンを10000個まで履歴に残す
 set history=10000
-" マウスモード有効
-"set mouse=a
-" xtermとscreen対応
-"理解していない
 set ttymouse=xterm2
 " コマンドを画面最下部に表示する
 set showcmd
@@ -129,74 +90,23 @@ set autoindent
 set expandtab
 set shiftwidth=4 
  
-" w!! でスーパーユーザーとして保存（sudoが使える環境限定）
-"理解していない
-cmap w!! w !sudo tee > /dev/null %
 " 入力モード中に素早くJJと入力した場合はESCとみなす
 inoremap jj <Esc>
-" ESCを二回押すことでハイライトを消す
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
-" カーソル下の単語を * で検索
-"理解していない
-vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
-" 検索後にジャンプした際に検索単語を画面中央に持ってくる
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
 " j, k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
 " vを二回で行末まで選択
 vnoremap v $h
-" TABにて対応ペアにジャンプ
-"理解していない
-nnoremap &lt;Tab&gt; %
-vnoremap &lt;Tab&gt; %
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " Shift + 矢印でウィンドウサイズを変更
-"理解していない
 nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
-" T + ? で各種設定をトグル
-"理解していない
-nnoremap [toggle] <Nop>
-nmap T [toggle]
-nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
-nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
-nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
-nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
- 
-" :e などでファイルを開く際にフォルダが存在しない場合は自動作成
-"理解していない
-function! s:mkdir(dir, force)
-  if !isdirectory(a:dir) && (a:force ||
-        \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
-    call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-  endif
-endfunction
- 
-" vim 起動時のみカレントディレクトリを開いたファイルの親ディレクトリに指定 
-"理解していない
-function! s:ChangeCurrentDir(directory, bang)
-    if a:directory == ''
-        lcd %:p:h
-    else
-        execute 'lcd' . a:directory
-    endif
- 
-    if a:bang == ''
-        pwd
-    endif
-endfunction
  
 " ~/.vimrc.localが存在する場合のみ設定を読み込む
 "理解していない
@@ -237,9 +147,6 @@ noremap [Prefix]k <c-b><cr><cr>
 " PHP用設定
 " PHP辞書ファイル指定
 autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
-" :makeでPHP構文チェック
-au FileType php setlocal makeprg=php\ -l\ %
-au FileType php setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 " PHPの関数やクラスの折りたたみ
 let php_folding = 0
 " 文字列の中のSQLをハイライト
@@ -340,13 +247,6 @@ command! Sqlfromj :call SQLFromJava()
 au FileType ruby setlocal makeprg=ruby\ -c\ %
 au FileType ruby setlocal errorformat=%m\ in\ %f\ on\ line\ %l
  
-" Scala用設定
-" ファイルタイプの追加
-augroup filetypedetect
-autocmd! BufNewFile,BufRead *.scala setfiletype scala
-autocmd! BufNewFile,BufRead *.sbt setfiletype scala
-augroup END
-autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
  
 " 行末、行の最初への移動のキーマップ設定
 :map! <C-e> <Esc>$a

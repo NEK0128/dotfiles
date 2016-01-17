@@ -7,14 +7,6 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'tpope/vim-endwise.git'
-NeoBundle 'taichouchou2/vim-rsense'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'petdance/vim-perl'
-NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neosnippet'
@@ -62,7 +54,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <S-Left> <C-w><<CR>
-nnoremap <S-Right> <C-w><CR>
+nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up> <C-w>-<CR>
 nnoremap <S-Down> <C-w>+<CR>
 
@@ -73,16 +65,7 @@ endif
 
 nnoremap <silent> j gj
 nnoremap <silent> k gk
-inoremap <c-d> <delete>
-inoremap <c-j> <down>
-inoremap <c-k> <up>
-inoremap <c-h> <left>
-inoremap <c-l> <right>
 
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-nnoremap <c-h> <c-w>h
 noremap [Prefix]j <c-f><cr><cr>
 noremap [Prefix]k <c-b><cr><cr>
 
@@ -129,8 +112,6 @@ let g:neocomplcache_skip_input_time = '0.5'
 :map <C-e> <Esc>$a
 :map <C-a> <Esc>^a
 
-inoremap <C-d> $
-inoremap <C-a> @
 
 autocmd FileType python setlocal completeopt-=preview
 

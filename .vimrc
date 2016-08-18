@@ -11,6 +11,8 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'devidhalter/jedi-vim'
+NeoBundle 'typescript-vim'
+NeoBundle 'typescript-tools.git'
 call neobundle#end()
 
 set t_Co=256
@@ -112,6 +114,8 @@ let g:neocomplcache_skip_input_time = '0.5'
 :map <C-e> <Esc>$a
 :map <C-a> <Esc>^a
 
+" typescript
 
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 autocmd FileType python setlocal completeopt-=preview
 

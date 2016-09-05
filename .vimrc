@@ -43,7 +43,6 @@ set hlsearch
 set history=10000
 set ttymouse=xterm2
 set showcmd
-set tabstop
 set autoindent
 set expandtab
 set shiftwidth=4

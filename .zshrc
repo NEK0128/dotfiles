@@ -6,6 +6,10 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch"
 plugins=(git)
 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$PATH:/usr/local/src/scala/bin
+export SCALA_HOME=/usr/local/src/scala
+
 source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.zsh_history
@@ -29,4 +33,3 @@ alias gl="git log"
 alias gr="git rm"
 alias gplo="git pull origin"
 alias gm="git merge"
-

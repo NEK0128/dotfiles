@@ -30,3 +30,4 @@ alias gr="git rm"
 alias gplo="git pull origin"
 alias gm="git merge"
 
+export PATH=$PATH:/Users/ken/.nodebrew/current/bin:/Users/ken/.pyenv/shims

@@ -6,6 +6,10 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch"
 plugins=(git)
 
+export PATH=$PATH:/Users/ken/.nodebrew/current/bin:/Users/ken/.pyenv/shims
+export PATH=$PATH:/usr/local/src/scala/bin
+export SCALA_HOME=/usr/local/src/scala
+
 source $ZSH/oh-my-zsh.sh
 
 HISTFILE=~/.zsh_history
@@ -30,4 +34,3 @@ alias gr="git rm"
 alias gplo="git pull origin"
 alias gm="git merge"
 
-export PATH=$PATH:/Users/ken/.nodebrew/current/bin:/Users/ken/.pyenv/shims

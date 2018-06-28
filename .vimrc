@@ -1,20 +1,4 @@
 set nocompatible
-filetype off
-if has('vim_starting')
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'devidhalter/jedi-vim'
-NeoBundle 'typescript-vim'
-NeoBundle 'typescript-tools.git'
-call neobundle#end()
-
 set t_Co=256
 syntax on
 set encoding=utf8

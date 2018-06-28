@@ -11,6 +11,8 @@ export PATH=$PATH:/usr/local/src/scala/bin
 export SCALA_HOME=/usr/local/src/scala
 
 source $ZSH/oh-my-zsh.sh
+source .kakehashi_common
+source .kakehashi_dev
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
@@ -23,14 +25,18 @@ setopt share_history
 
 setopt correct
 
+alias relogin='exec $SHELL -l'
+
 alias ga="git add"
 alias gcm="git commit -m"
 alias gpso="git push origin"
 alias gc="git checkout"
 alias gb="git branch"
+alias gba="git branch -a"
 alias gs="git status"
 alias gl="git log"
 alias gr="git rm"
 alias gplo="git pull origin"
 alias gm="git merge"
+alias gf="git fetch"
 

@@ -3,3 +3,5 @@
 .idea/
 musubi_restapi/resources/simple_engine/__pycache__/__init__.cpython-35.pyc
 musubi_restapi.egg-info/
+.vscode/
+*/__init__.py
